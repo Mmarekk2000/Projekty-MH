@@ -88,6 +88,14 @@ namespace Ratuj_Ludzi
             AnimateEnemy(enemy, random.Next((int)playArea.ActualHeight - 100),
                 random.Next((int)playArea.ActualHeight - 100), "(Canvas.Top)");
             playArea.Children.Add(enemy);
+
+            enemy.MouseEnter += enemy_MouseEnter;
+        }
+
+        private void enemy_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (humanCaptured)
+                EndTheGame();
         }
 
         private void AnimateEnemy(ContentControl enemy, double from, double to, string propertyToAnimate)
@@ -132,6 +140,32 @@ namespace Ratuj_Ludzi
                 humanCaptured = false;
                 human.IsHitTestVisible = true;
             }
+        }
+
+        private void playArea_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (humanCaptured)
+            {
+                Point pointerPosition = e.GetCurrentPoint(null).Position;
+                Point relativePosition = grid.TransformToVisual(playArea).TransformPoint(pointerPosition);
+                if ((Math.Abs(relativePosition.X - Canvas.GetLeft(human)) > human.ActualWidth * 3)
+                    || (Math.Abs(relativePosition.Y - Canvas.GetTop(human)) > human.ActualHeight * 3))
+                {
+                    humanCaptured = false;
+                    human.IsHitTestVisible = true;
+                }
+                else
+                {
+                    Canvas.SetLeft(human, relativePosition.X - human.ActualWidth / 2);
+                    Canvas.SetTop(human, relativePosition.Y - human.ActualHeight / 2);
+                }
+            }
+        }
+
+        private void playArea_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (humanCaptured)
+                EndTheGame();
         }
     }
 }

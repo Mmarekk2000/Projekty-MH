@@ -32,7 +32,7 @@
             <ContentControl Content="ContentControl" VerticalAlignment="Center" HorizontalAlignment="Center" Template="{DynamicResource EnemyTemplate}"/>
         </StackPanel>
         <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="20" ValueChanged="ProgressBar_ValueChanged" AutomationProperties.Name="progressBar"/>
-        <Canvas x:Name="playArea" Grid.Row="1" Grid.ColumnSpan="3">
+        <Canvas x:Name="playArea" Grid.Row="1" Grid.ColumnSpan="3" MouseMove="playArea_MouseMove" MouseLeave="playArea_MouseLeave">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00B9FF" Offset="0.362"/>
