@@ -146,8 +146,8 @@ namespace Ratuj_Ludzi
         {
             if (humanCaptured)
             {
-                Point pointerPosition = e.GetCurrentPoint(null).Position;
-                Point relativePosition = grid.TransformToVisual(playArea).TransformPoint(pointerPosition);
+                Point pointerPosition = e.GetPosition(null);
+                Point relativePosition = grid.TransformToVisual(playArea).Transform(pointerPosition);
                 if ((Math.Abs(relativePosition.X - Canvas.GetLeft(human)) > human.ActualWidth * 3)
                     || (Math.Abs(relativePosition.Y - Canvas.GetTop(human)) > human.ActualHeight * 3))
                 {
