@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="rozdzial2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:rozdzial2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="button1" Content="Pokaż komunikat" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Click="button1_Click"/>
+        <Button x:Name="button2" Content="If/Else" Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Sprawdzenie kolejnego warunku" Margin="0,0,0,0" Grid.Row="1" HorizontalAlignment="Center" Click="button3_Click"/>
+        <Button x:Name="button4" Content="Pętla" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="button4_Click"/>
+        <TextBlock x:Name="myLabel" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}"/>
+
+    </Grid>
+</Page>

@@ -161,7 +161,6 @@ namespace Ratuj_Ludzi
                 }
             }
         }
-
         private void playArea_MouseLeave(object sender, MouseEventArgs e)
         {
             if (humanCaptured)
