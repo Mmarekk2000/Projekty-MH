@@ -41,17 +41,43 @@ namespace rozdzial2
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-
+            int x = 5;
+            if (x == 10)
+            {
+                myLabel.Text = "x musi być równe 10";
+            }
+            else
+            {
+                myLabel.Text = "x nie jest równe 10";
+            }
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-
+            int someValue = 4;
+            string name = "Krzysiek";
+            if ((someValue == 3) && (name.Equals("Janek")))
+            {
+                myLabel.Text = "someValue jest równne 3 i name jest równe Janek";
+            }
+            myLabel.Text = "ten wiersz jest wykonywany bez względu na warunki";
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
+            int count = 0;
 
+            while (count < 10)
+            {
+                count = count + 1;
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                count = count - 1;
+            }
+
+            myLabel.Text = "Odpowiedź brzmi " + count;
         }
     }
 }
